@@ -2,102 +2,33 @@
 <html>
 <head>
   <title>User Dashboard</title>
-  <style>
-    /* Basic styling */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-    }
-
-    h1 {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .container {
-      max-width: 1500px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* Carbon footprint bar chart styling */
-    .bar-chart {
-      width: 45%;
-      margin: 20px;
-    }
-
-    .bar-chart h2 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    .bar-chart .chart-container {
-      width: 100%;
-      height: 300px;
-    }
-
-    /* Energy usage pie chart styling */
-    .pie-chart {
-      width: 40%;
-      margin: 20px;
-    }
-
-    .pie-chart h2 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    .pie-chart .chart-container {
-      width: 100%;
-      height: 300px;
-    }
-
-    /* Recommendations styling */
-    .recommendations {
-      width: 80%;
-      margin: 20px auto;
-    }
-
-    .recommendations h2 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    .recommendations ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .recommendations li {
-      width: 25%;
-      margin: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 2px 2px 5px #ccc;
-    }
-  </style>
+  <link rel="stylesheet" href="..CSS/dash.css"> <!--../CSS/-->
+  <link rel="stylesheet" href="../CSS/animations.css">
+  <link rel="stylesheet" href="../CSS/main.css">
 </head>
 <body>
+  <header>
+    <h1 class="logo"><a href="homepage.html"> MyFootprint</h1></a>
+    <nav>
+      <ul>
+        <li><a href="dash.html">Dashboard</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="aboutus.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
   <h1>User Dashboard</h1>
 
   <div class="container">
     <div class="bar-chart">
-      <h2>Daily Carbon Footprint</h2>
-      <div class="chart-container">
+      <h2><br>Daily Carbon Footprint<br></h2>
+      <div class="chart-container" align="center">
         <canvas id="carbonChart"></canvas>
       </div>
     </div>
 
-    <div class="pie-chart">
-      <h2>Daily Energy Usage</h2>
+    <div class="pie-chart" align="center">
+      <h2><br>Daily Energy Usage</h2>
       <div class="chart-container">
         <canvas id="energyChart"></canvas>
       </div>
@@ -132,9 +63,17 @@
 					label: "Average Carbon Footprint",
 					data: [3.1, 2.9, 2.9, 3.1, 3.1, 2.9, 3.0],
 					fill: true,
-					borderColor: "rgba(255, 99, 132, 1)",
+					borderColor: "rgba(205,209,228,1)",
 					lineTension: 0.1
-				}
+				},
+                {
+                    label: "John's Carbon Footprint",
+                    data: [3.1,3.0,3.2,3.0,3.2,3.3,3.1],
+                    fill: false,
+                    borderColor: "rgba(255, 99, 132, 1)",
+                    
+                    lineTension: 0.1
+                }
 			]
 		};
 
@@ -160,18 +99,18 @@ var energyData = {
     label: "Daily Energy Usage",
     data: [20, 25, 15, 30, 10],
     backgroundColor: [
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)'
+      '#73AF64',
+      '#B1D8B7',
+      '#76B947',
+      '#93C47D',
+      '#C4DCAE'
     ],
     borderColor: [
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 159, 64, 1)'
+      '#73AF64',
+      '#B1D8B7',
+      '#76B947',
+      '#93C47D',
+      '#C4DCAE'
     ],
     borderWidth: 1
   }]
